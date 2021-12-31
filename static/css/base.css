@@ -6,9 +6,18 @@ body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px); /* maybe need to change that */
-    color: #555; /* Need to change it */
+    color: white; /* Need to change it */
     font-family: 'Lato', cursive;
 }
+
+/* taken from https://www.w3docs.com/snippets/css/how-to-create-a-multicolor-text-in-html-and-css.html */
+.multicolortext {
+    background-image: linear-gradient(to left, green, white, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
 /* from Bulma */
 .icon {
@@ -81,18 +90,6 @@ body {
 .bg-black {
     background: #000 !important;
 }
-
-/* Need to change the button to fit design */
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-}
-
 
 /* -------------------------------- Media Queries */
 
