@@ -6,7 +6,7 @@ body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #fff;
+    color: #000;
     font-family: 'Lato';
 }
 
@@ -21,12 +21,7 @@ body {
 }
 
 
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(255,255,255,.3);
-}
+
 
 /* from Bulma */
 .icon {
@@ -39,6 +34,11 @@ hr {
 
 .logo-font {
     text-transform: uppercase;
+}
+
+.product-image-size {
+    max-height: 361.25px;
+    max-width: 361.25px;;
 }
 
 .main-logo-link {
