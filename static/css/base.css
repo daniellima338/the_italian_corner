@@ -4,30 +4,30 @@ html {
 
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
-    position: fixed;
     background-size: cover;
-    height: calc(100vh - 164px); /* maybe need to change that */
-    color: white; /* Need to change it */
-    font-family: 'Lato', cursive;
-    z-index: -1;
+    height: calc(100vh - 164px);
+    color: #fff;
+    font-family: 'Lato';
 }
 
-
-/* taken from https://www.w3docs.com/snippets/css/how-to-create-a-multicolor-text-in-html-and-css.html */
-.multicolortext {
-    background-image: linear-gradient(to left, green, white, red);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
+.overlay-transparent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to left, rgb(0, 140, 69, 0.4), rgba(244, 245, 240, .4), rgba(205, 33, 42, .4));
     color: transparent;
-  }
+}
+
 
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
-    border-top: 4px solid rgba(255,255,255,.3);
+    border-top: 1px solid rgba(255,255,255,.3);
 }
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -45,78 +45,57 @@ hr {
     width: fit-content;
 }
 
-/* Need to change the button to fit design */
 .shop-now-button {
-    background: black;
+    background: rgb(0, 140, 69, 0.7);
     color: white;
     min-width: 260px;
 }
 
-/* Need to change the button to fit design */
 .btn-black {
     background: black;
     color: white;
 }
 
-.overlay {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(4, 36, 11, 0.7);
-    z-index: 1000;
-}
-
-/* Need to change the button to fit design */
-.btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
-}
-
-/* Need to change the button to fit design */
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
-    color: white !important;
-}
-
-
-/* Need to change the button to fit design */
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background-image: linear-gradient(to left, rgb(0, 140, 69, 0.9), rgba(244, 245, 240, .9), rgba(205, 33, 42, .9));
     color: white;
 }
 
-/* Need to change the button to fit design */
 .text-black {
     color: #000 !important;
 }
 
-/* Need to change the button to fit design */
 .border-black {
     border: 1px solid black !important;
 }
 
-/* Need to change the button to fit design */
 .bg-black {
     background: #000 !important;
 }
 
-/* -------------------------------- Media Queries */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
 
+/* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-    .container {
-      max-width: 80%;
-    }
+  .container {
+    max-width: 80%;
   }
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
