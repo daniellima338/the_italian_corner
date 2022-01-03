@@ -4,11 +4,14 @@ html {
 
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    position: fixed;
     background-size: cover;
     height: calc(100vh - 164px); /* maybe need to change that */
     color: white; /* Need to change it */
     font-family: 'Lato', cursive;
+    z-index: -1;
 }
+
 
 /* taken from https://www.w3docs.com/snippets/css/how-to-create-a-multicolor-text-in-html-and-css.html */
 .multicolortext {
@@ -19,6 +22,12 @@ body {
     color: transparent;
   }
 
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 4px solid rgba(255,255,255,.3);
+}
 /* from Bulma */
 .icon {
     align-items: center;
@@ -47,6 +56,14 @@ body {
 .btn-black {
     background: black;
     color: white;
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(4, 36, 11, 0.7);
+    z-index: 1000;
 }
 
 /* Need to change the button to fit design */
@@ -92,8 +109,6 @@ body {
 }
 
 /* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
 
 
 /* Slightly larger container on xl screens */
