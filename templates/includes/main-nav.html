@@ -10,12 +10,14 @@
                 Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Wine</a>
-                <a href="" class="dropdown-item ">Pasta</a>
-                <a href="" class="dropdown-item ">Coffee</a>
-                <a href="" class="dropdown-item ">Cheese</a>
-                <a href="" class="dropdown-item ">Other</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?category=wine" class="dropdown-item">Wine</a>
+                <a href="{% url 'products' %}?category=pasta" class="dropdown-item ">Pasta</a>
+                <a href="{% url 'products' %}?category=coffee" class="dropdown-item ">Coffee</a>
+                <a href="{% url 'products' %}?category=cheese_sausages" class="dropdown-item ">Cheese &amp; Sausages</a>
+                <a href="{% url 'products' %}?category=liqours" class="dropdown-item ">Liqours</a>
+                <a href="{% url 'products' %}?category=sweets" class="dropdown-item ">Sweets</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item ">Accessories</a>
+                <a href="{% url 'products' %}?category=wine,pasta,coffee,cheese_sausages,liqours,sweets,accessories" class="dropdown-item">All Products</a>
             </div>
         </li>
 
@@ -24,10 +26,10 @@
                 Kicthen Machines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="kicthen-machines-link">
-                <a href="" class="dropdown-item">Pasta machines</a>
-                <a href="" class="dropdown-item">Coffee Machines</a>
-                <a href="" class="dropdown-item">Kitchen Helpers</a>
-                <a href="" class="dropdown-item">All Machines</a>
+                <a href="{% url 'products' %}?category=pasta_machine" class="dropdown-item">Pasta machines</a>
+                <a href="{% url 'products' %}?category=coffee_machine" class="dropdown-item">Coffee Machines</a>
+                <a href="{% url 'products' %}?category=kitchen_helpers" class="dropdown-item">Kitchen Helpers</a>
+                <a href="{% url 'products' %}?category=pasta_machine,coffee_machine,kitchen_helpers" class="dropdown-item">All Machines</a>
             </div>
         </li>
 
