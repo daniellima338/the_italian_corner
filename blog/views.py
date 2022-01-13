@@ -17,18 +17,16 @@ def post_list(request):
 
     return render(request, template, context)
 
+
 def post_detail(request, post_id):
     """ A view to return the blog details """
 
-    specific_blog = request.GET.get('post_id')
-    posts = Post.objects.filter(status=1).order_by('created_on')
-
+    blog = get_object_or_404(Post, pk=post_id)
 
     template = 'blog/post_detail.html'
     
     context = {
-        'specific_blog': specific_blog,
-        'posts':posts,
+        'blog': blog,
     }
 
     return render(request, template, context)
