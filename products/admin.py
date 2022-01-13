@@ -13,6 +13,8 @@ class ProductAdmin(admin.ModelAdmin):
         'image',
     )
 
+    list_filter = ("category",)
+    
     ordering = ('sku',)
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -20,6 +22,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+    search_fields = ['friendly_name', 'name']
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
