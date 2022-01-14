@@ -1,26 +1,55 @@
 html {
     height: 100%;
+    font-size: 62.5%;
 }
 
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #000;
+    color: #fff;
     font-family: 'Lato';
+    font-size: 2.4rem;
 }
 
+
+h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+li {
+    font-size: 2rem;
+}
 .overlay-transparent {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to left, rgb(0, 140, 69, 0.4), rgba(244, 245, 240, .4), rgba(205, 33, 42, .4));
+    background-image: linear-gradient(to right, rgba(0, 140, 69, 0.8), rgb(125 126 118 / 80%), rgba(104, 0, 0, .8));
     color: transparent;
 }
 
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
 
 
 /* from Bulma */
@@ -36,6 +65,13 @@ body {
     text-transform: uppercase;
 }
 
+a {
+    color: #fff;
+}
+
+.shadow {
+    text-shadow: 1px 20px rgb(0 140 69 / 80%);
+}
 .product-image-size {
     max-height: 361.25px;
     max-width: 361.25px;;
@@ -43,12 +79,18 @@ body {
 
 .main-logo-link {
     width: fit-content;
+    color: rgba(104, 0, 0, .8);
 }
 
 .shop-now-button {
-    background: rgb(0, 140, 69, 0.7);
+    background: rgba(104, 0, 0, .8);
     color: white;
     min-width: 260px;
+    font-size: 1.8rem;
+}
+
+.dropdown-item {
+    font-size: 1.5rem;
 }
 
 .btn-black {
@@ -69,13 +111,22 @@ body {
     color: white !important;
 }
 
+.multicolortext:hover {
+    background-image: linear-gradient(to left, rgba(0, 140, 69, 1) 20%, rgb(230, 231, 225, 1) 80%, rgba(104, 0, 0, 1) 10%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
-.btn-black:focus {
-    background-image: linear-gradient(to left, rgb(0, 140, 69, 0.9), rgba(244, 245, 240, .9), rgba(205, 33, 42, .9));
+.btn-black:focus,
+ {
+    background: rgba(0, 140, 69, 0.8);
     color: white;
 }
 
@@ -232,16 +283,6 @@ input[name='q']::placeholder {
 
 .bg-black {
     background: #000 !important;
-}
-
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
 }
 
 /* -------------------------------- Media Queries */

@@ -5,39 +5,44 @@
     <div class="container header-container">
         <div class="row">
             <div class="col">
-                
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
+    <!-- Header -->
     <div class="overlay-transparent"></div>
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font multicolortext">
+                <h1 class="logo-font">
                     Try a taste of Italy
                 </h1>
                 <div class="my-5">
                     <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-pill text-uppercase py-3"><span
-                                class="multicolortext">Look at the products</span></a>
+                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-pill text-uppercase py-3">
+                            <span>
+                                Look at the products
+                            </span>
+                        </a>
                     </h4>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end header -->
+    <!-- monthly wine section -->
     <div class="container h-50">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <a href="">
-                    <img src="/media/wine_page.jpg" alt="" class="rounded float-left img-fluid">
+                    <img src="/media/wine_page.jpg" alt="Wine cellar" class="rounded img-fluid">
                 </a>
             </div>
-            <div class="col-4">
-                <a href="{% url 'products' %}" class="text-decoration-none">
-                    <h2 class="mt-3">Sign up for our montly wine service</h2>
+            <div class="col-12 col-sm-6">
+                <a href="" class="text-decoration-none">
+                    <h2 class="mt-3 multicolortext">Sign up for our montly wine service</h2>
                 <hr>
                 </a>
                 <p>Get a feel for the Italian wine scene, by trying a new italian wine each month. Make an account, and
@@ -46,46 +51,53 @@
                     bottle</p>
             </div>
         </div>
+        <!-- end monthly wine section -->
         <hr>
+        <!-- products -->
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-sm-6">
                 <a href="{% url 'products' %}" class="text-decoration-none">
-                    <h2 class="mt-3">Try our amazing italian products</h2>
+                    <h2 class="mt-3 multicolortext">Try our amazing italian products</h2>
                 </a>
                 <hr>
                 <p>Go exploring in the many different and unique products Italy have to offer. All our products are
                     handpicked from Italy and shipped here. From Wine to Chesse, you can find everything that makes your
                     Italian dinner stand out.</p>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <a href="{% url 'products' %}">
-                    <img src="/media/product_page.jpg" alt="" class="rounded float-left img-fluid">
+                    <img src="/media/product_page.jpg" alt="Products" class="rounded img-fluid">
                 </a>
             </div>
         </div>
+        <!-- end products -->
         <hr>
+        <!-- recipies -->
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <a href="">
-                    <img src="/media/recipe_page.jpg" alt="" class="rounded float-left img-fluid">
+                    <img src="/media/recipe_page.jpg" alt="Cookbook" class="rounded img-fluid">
                 </a>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-6">
                 <a href="" class="text-decoration-none">
-                    <h2 class="mt-3">Get inspiration from our italian recipies</h2>
+                    <h2 class="mt-3 multicolortext">Get inspiration from our italian recipies</h2>
                 </a>  
                 <hr>
                 <p>If you are missing ideas for how to use our incredible products, you can find inspiration in our many
                     different recipies. These recipies are all traditional italian, and can be traced back to any
                     Italian Grandmothers kitchen. You will find most of the products you need in our products section,
-                    and the rest you can find in any supermarket.</p>
+                    and the rest you can find in any supermarket.'
+                </p>
             </div>
         </div>
-        <hr class="divider">
+        <!-- end recipies -->
+        <hr>
+        <!-- italian Kitchen equipment -->
         <div class="row">
-            <div class="col-4">
-                <a href="" class="text-decoration-none">
-                    <h2 class="mt-3">Buy your italian kitchen equipment here</h2>
+            <div class="col-12 col-sm-6">
+                <a href="{% url 'products' %}" class="text-decoration-none">
+                    <h2 class="mt-3 multicolortext">Buy your italian kitchen equipment here</h2>
                 </a>
                 <hr>
                 <p>Anyone should try their hands with italian cooking from the bottom. But to get going you need the
@@ -94,12 +106,13 @@
                     other stuffed pastas, you can find the equipment here. All products are handpicked from italian
                     makers.</p>
             </div>
-            <div class="col-6 mb-5">
+            <div class="col-12 col-sm-6 mb-5">
                 <a href="">
-                    <img src="/media/italian_equipment_page.jpg" alt="" class="rounded float-left img-fluid">
+                    <img src="/media/italian_equipment_page.jpg" alt="Italian Kitchen Equipment" class="rounded img-fluid">
                 </a>
             </div>
         </div>
+        <!--end italian Kitchen equipment -->
     </div>
     
 
