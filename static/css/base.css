@@ -7,11 +7,25 @@ body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #fff;
     font-family: 'Lato';
-    font-size: 2.4rem;
+    font-size: 2rem;
 }
 
+.white-text {
+    color: #fff;
+}
+
+hr {
+    background: #fff;
+}
+
+.product-page {
+    color: black;
+}
+
+.product-header {
+    color: #fff;
+}
 
 h1 {
     font-size: 3.6rem;
@@ -144,6 +158,7 @@ a {
 .remove-item {
     cursor: pointer;
 }
+
 
 input[name='q']::placeholder {
     color: #aab7c4;
