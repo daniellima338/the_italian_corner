@@ -1,0 +1,1 @@
+web: gunicorn the_italian_corner.wsgi:application
