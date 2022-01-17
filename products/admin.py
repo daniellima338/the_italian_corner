@@ -14,7 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     list_filter = ("category",)
-    
+    search_fields = ['name']
     ordering = ('sku',)
 
 class CategoryAdmin(admin.ModelAdmin):
