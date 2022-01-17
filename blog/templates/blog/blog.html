@@ -15,23 +15,23 @@
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font multicolortext">
+                <h1 class="logo-font white-text">
                     Get inspiration in the blogs
                 </h1>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container white-text">
         <div class="row">
             <!-- Blog Entries Column -->
             <h1>  </h1>
-            <div class="col-md-8 mt-3 left">
+            <div class="col-md-8 left">
                 {% for post in posts %}
                 <div class="card mb-4">
-                    <div class="card-body">
+                    <div class="card-body card-bagground">
                         <h2 class="card-title">{{ post.title }}</h2>
-                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                        <p class="card-text h6">{{ post.author }} | {{ post.created_on}} </p>
                         <p class="card-text">{{post.content|slice:":200" }}</p>
                         <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More &rarr;</a>
                     </div>

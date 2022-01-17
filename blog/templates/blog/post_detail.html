@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 
 {% block page_header %}
+    <div class="overlay-transparent"></div>
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -9,14 +10,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-  <div class="container mt-5">
+  <div class="container mt-5 white-text">
     <div class="row">
-      <div class="col-md-8 card mb-4  mt-3 left  top">
-        <div class="card-body">
-          <h1>{% block title %} {{ blog.title }} {% endblock title %}</h1>
-          <p class=" text-muted">{{ blog.author }} | {{ blog.created_on }}</p>
-          <p class="card-text ">{{ blog.content | safe }}</p>
+      <div class="col-md-12">
+        <div class="card-bagground">
+          <h1 class="text-center">{% block title %} {{ blog.title }} {% endblock title %}</h1>
+          <p class="card-text ml-2">{{ blog.content | safe }}</p>
+          <p class="ml-2">{{ blog.author }} | {{ blog.created_on }}</p>
         </div>
       </div>
     </div>

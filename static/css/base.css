@@ -11,22 +11,8 @@ body {
     font-size: 2rem;
 }
 
-.white-text {
-    color: #fff;
-}
 
-hr {
-    background: #fff;
-}
-
-.product-page {
-    color: black;
-}
-
-.product-header {
-    color: #fff;
-}
-
+/* font sizes */
 h1 {
     font-size: 3.6rem;
     font-weight: bold;
@@ -37,13 +23,42 @@ h2 {
     font-weight: bold;
 }
 
-h4 {
+h4, li {
     font-size: 2rem;
 }
 
-li {
-    font-size: 2rem;
+.dropdown-item {
+    font-size: 1.5rem;
 }
+
+
+/* text colors */
+.white-text {
+    color: #fff;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+
+/* divider */
+hr {
+    background: #fff;
+}
+
+
+/* background colors */
+.border-black {
+    border: 1px solid black !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+
+/* Overlays */
 .overlay-transparent {
     position: fixed;
     top: 0;
@@ -53,7 +68,6 @@ li {
     background-image: linear-gradient(to right, rgba(0, 140, 69, 0.8), rgb(125 126 118 / 80%), rgba(104, 0, 0, .8));
     color: transparent;
 }
-
 
 .overlay {
 	height: 100%;
@@ -75,20 +89,14 @@ li {
     width: 1.5rem;
 }
 
+
+/* Logo */
 .logo-font {
     text-transform: uppercase;
 }
 
-a {
-    color: #fff;
-}
-
 .shadow {
     text-shadow: 1px 20px rgb(0 140 69 / 80%);
-}
-.product-image-size {
-    max-height: 361.25px;
-    max-width: 361.25px;;
 }
 
 .main-logo-link {
@@ -96,17 +104,19 @@ a {
     color: rgba(104, 0, 0, .8);
 }
 
-.shop-now-button {
-    background: rgba(104, 0, 0, .8);
-    color: white;
-    min-width: 260px;
-    font-size: 1.8rem;
+.card-bagground {
+    background: linear-gradient(to right, rgba(0, 140, 69, 0.9), rgb(125 126 118 / 1), rgba(104, 0, 0, .9));
 }
 
-.dropdown-item {
-    font-size: 1.5rem;
+
+/* product images */
+.product-image-size {
+    max-height: 361.25px;
+    max-width: 361.25px;;
 }
 
+
+/* buttons */
 .btn-black {
     background: black;
     color: white;
@@ -125,13 +135,12 @@ a {
     color: white !important;
 }
 
-.multicolortext:hover {
-    background-image: linear-gradient(to left, rgba(0, 140, 69, 1) 20%, rgb(230, 231, 225, 1) 80%, rgba(104, 0, 0, 1) 10%);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+.shop-now-button {
+    background: rgba(104, 0, 0, .8);
+    color: white;
+    min-width: 260px;
+    font-size: 1.8rem;
+}
 
 .shop-now-button:hover,
 .shop-now-button:active,
@@ -143,7 +152,6 @@ a {
     background: rgba(0, 140, 69, 0.8);
     color: white;
 }
-
 
 .btt-button {
     height: 42px;
@@ -159,13 +167,19 @@ a {
     cursor: pointer;
 }
 
+.multicolortext:hover {
+    background-image: linear-gradient(to left, rgba(0, 140, 69, 1) 20%, rgb(230, 231, 225, 1) 80%, rgba(104, 0, 0, 1) 10%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
 input[name='q']::placeholder {
     color: #aab7c4;
 }
 
 /* ------------------------------- bootstrap toasts */
-
 .message-container {
     position: fixed;
     top: 72px;
@@ -180,6 +194,7 @@ input[name='q']::placeholder {
 .toast-capper {
     height: 2px;
 }
+
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
@@ -234,7 +249,6 @@ input[name='q']::placeholder {
 
 
 /* Allauth form formatting */
-
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
     color: #6c757d; /* text-secondary */
@@ -287,18 +301,6 @@ input[name='q']::placeholder {
 	color: #17a2b8; /* text-info */
 }
 
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-.bg-black {
-    background: #000 !important;
-}
 
 /* -------------------------------- Media Queries */
 
