@@ -41,7 +41,6 @@ h4, li {
     color: #000 !important;
 }
 
-
 /* divider */
 hr {
     background: #fff;
@@ -67,6 +66,7 @@ hr {
     width: 100%;
     background-image: linear-gradient(to right, rgba(0, 140, 69, 0.8), rgb(125 126 118 / 80%), rgba(104, 0, 0, .8));
     color: transparent;
+    
 }
 
 .overlay {
@@ -167,7 +167,9 @@ hr {
     cursor: pointer;
 }
 
-.multicolortext:hover {
+.multicolortext:hover,
+.allauth-form-inner-content a:hover
+ {
     background-image: linear-gradient(to left, rgba(0, 140, 69, 1) 20%, rgb(230, 231, 225, 1) 80%, rgba(104, 0, 0, 1) 10%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -251,7 +253,6 @@ input[name='q']::placeholder {
 /* Allauth form formatting */
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -264,7 +265,7 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #aab7c4;
+    color: #000;
 }
 
 .allauth-form-inner-content button,
@@ -300,6 +301,7 @@ input[name='q']::placeholder {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
 
 
 /* -------------------------------- Media Queries */

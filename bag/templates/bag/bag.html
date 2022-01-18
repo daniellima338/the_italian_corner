@@ -13,8 +13,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-2">
+    <div class="overlay-transparent"></div>
+    <div class="container text-white mb-2">
         <div class="row">
             <div class="col">
                 <hr>
@@ -27,7 +27,7 @@
                 {% if bag_items %}
                     <div class="table-responsive rounded">
                         <table class="table table-sm table-borderless">
-                            <thead class="text-black">
+                            <thead class="text-white">
                                 <tr>
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
@@ -38,14 +38,14 @@
                             </thead>
 
                             {% for item in bag_items %}
-                                <tr>
+                                <tr class="text-white">
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0"><strong>Size: </strong>{% if item.product.size %}{{ item.product.size|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                        <p class="my-0 small">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
@@ -86,13 +86,13 @@
                                     </td>
                                 </tr>
                             {% endfor %}
-                                <tr>
+                                <tr class="text-white">
                                     <td colspan="5" class="pt-5 text-right">
-                                        <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                        <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                        <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                        <h4><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h4>
+                                        <h4>Delivery: ${{ delivery|floatformat:2 }}</h4>
+                                        <h2 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h2>
                                         {% if free_delivery_delta > 0 %}
-                                            <p class="mb-1 text-danger">
+                                            <p class="mb-1">
                                                 You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
                                             </p>
                                         {% endif %}
