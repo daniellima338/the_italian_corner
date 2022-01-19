@@ -63,6 +63,7 @@ hr {
     width: 100%;
     background-image: linear-gradient(to right, rgba(0, 140, 69, 0.8), rgb(125 126 118 / 80%), rgba(104, 0, 0, .8));
     color: transparent;
+    z-index: -1;
     
 }
 
