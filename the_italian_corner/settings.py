@@ -29,7 +29,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['the-italian-corner.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
