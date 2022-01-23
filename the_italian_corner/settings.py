@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'blog',
-    'subscription',
-    
+    'subscriptions',
+
 
     # Other
     'crispy_forms',
@@ -215,6 +215,7 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY_THE_ITALIAN_CORNER', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY_THE_ITALIAN_CORNER', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET_THE_ITALIAN_CORNER', '')
+STRIPE_PRICE_ID = os.getenv('STRIPE_PRICE_ID_PREMIUM_PLAN','')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

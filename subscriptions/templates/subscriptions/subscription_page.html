@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- Header -->
+    <div class="overlay-transparent"></div>
+        <div class="container h-100 text-white">
+            <div class="row h-100">
+                <div class="col-7 col-md-6 my-auto">
+                    <h1 class="logo-font">
+                        Try a taste of Italy
+                    </h1>
+                    <div class="my-5">
+                        <h4>
+                            <span>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Subscribe</button>
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+        <!-- monthly wine section -->
+        <div class="container h-50 text-white">
+        </div>
+    
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'subscriptions/js/request.js' %}" type="text/javascript"></script>
+{% endblock %}
+
