@@ -217,7 +217,7 @@ STRIPE_PRICE_ID = os.getenv('STRIPE_PRICE_ID_PREMIUM_PLAN','')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'TheItalianCorner@example.com'
+    DEFAULT_FROM_EMAIL = 'theitaliancorner@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
