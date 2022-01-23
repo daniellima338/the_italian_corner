@@ -53,7 +53,9 @@ hr {
     background: #000 !important;
 }
 
-
+a {
+    color: wheat;
+}
 /* Overlays */
 .overlay-transparent {
     position: fixed;
