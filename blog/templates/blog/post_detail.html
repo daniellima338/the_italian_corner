@@ -11,8 +11,8 @@
 
 {% block content %}
   <div class="container mt-5 text-white">
-    <div class="row">
-      <div class="col-md-12">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10">
         <div class="card-bagground">
           <h1 class="text-center">{% block title %} {{ blog.title }} {% endblock title %}</h1>
           <p class="card-text ml-2">{{ blog.content | safe }}</p>
@@ -21,8 +21,8 @@
       </div>
     </div>
     <div class="container mt-5 text-white">
-      <div class="row">
-        <div class="col-md-8 border mb-4  mt-3 ">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 border mb-4 mt-3 ">
           <div>
             <!-- comments -->
             <h2>{{ comments.count }} comments</h2>
@@ -47,12 +47,12 @@
               Your comment is awaiting moderation
             </div>
             {% else %}
-            <h3>Leave a comment</h3>
-            <form method="post" style="margin-top: 1.3em;">
-              {{ comment_form.as_p }}
-              {% csrf_token %}
-              <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-            </form>
+              <h3>Leave a comment</h3>
+              <form method="post" style="margin-top: 1.3em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+              </form>
             {% endif %}
           </div>
         </div>
