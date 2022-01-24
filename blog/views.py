@@ -19,11 +19,11 @@ def post_list(request):
     return render(request, template, context)
 
 
-def post_detail(request, post_id):
+def post_detail(request, slug):
     """ A view to return the blog details """
 
     template = 'blog/post_detail.html'
-    blog = get_object_or_404(Post, pk=post_id)
+    blog = get_object_or_404(Post, slug=slug)
     comments = blog.comments.filter(active=True)
     new_comment = None
 
