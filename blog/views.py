@@ -3,15 +3,15 @@ from django.shortcuts import render, get_object_or_404
 from .forms import CommentForm
 from .models import Post
 
+
 def post_list(request):
     """ A view to return the blog page"""
-
     """ to only show posts that are published"""
 
     posts = Post.objects.filter(status=1).order_by('created_on')
 
     template = 'blog/blog.html'
-    
+
     context = {
         'posts': posts,
     }
@@ -41,7 +41,6 @@ def post_detail(request, slug):
     else:
         comment_form = CommentForm()
 
-    
     context = {
         'blog': blog,
         'comments': comments,
@@ -50,7 +49,3 @@ def post_detail(request, slug):
     }
 
     return render(request, template, context)
-
-
-
-

@@ -1,16 +1,19 @@
 from django.db import models
+from django.shortcuts import reverse
 
 from django.contrib.auth.models import User
 
 STATUS = (
-    (0,'Draft'),
-    (1,'Publish')
+    (0, 'Draft'),
+    (1, 'Publish')
 )
 
+
 class Post (models.Model):
+    """ Model for the Posts """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, null=False)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, 
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -19,15 +22,19 @@ class Post (models.Model):
 
     class Meta:
         ordering = ['-created_on']
-    
+
     def __str__(self):
         return self.title
-    
+
     def get_absolute_url(self):
+        """ function to get the slug """
         return reverse('post_detail', kwargs={'slug': self.slug})
 
+
 class Comment (models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
+    """ Model for the Comments """
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

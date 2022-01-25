@@ -42,16 +42,22 @@
                     {% else %}
                         <small>No Rating</small>
                     {% endif %}
-                    {% if product.size %}
+
+                    {% if product.category == 'pasta' or 'coffee' or 'cheese' or 'sweets' %}
                         <div class="col-12 text-left">
-                            <!-- need to find out how to write the measurement depending on category -->
-                            <small>{{ product.size }}</small> 
+                            <small>{{ product.size }} Gram</small> 
+                        </div>
+                        <!-- Not working, why?? -->
+                    {% elif product.category == 'liquors' or 'wine' %} 
+                        <div class="col-12 text-left">
+                            <small>{{ product.size }} ML</small> 
                         </div>
                     {% else %}
                         <div class="col-12 text-left">
-                            <small class="text-muted">{{ product.size }}</small>
+                            <small>{{ product.size }}</small> 
                         </div>
                     {% endif %}
+
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a class="text-info" href="{% url 'edit_product' product.id %}">Edit</a> | 
