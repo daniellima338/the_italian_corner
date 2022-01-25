@@ -18,7 +18,7 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
-
+    print(bag)
     if quantity < 0:
         bag[item_id] += quantity
         messages.success(request, f'Updated {product.name} quantity to { bag[item_id]}')
@@ -36,7 +36,7 @@ def adjust_bag(request, item_id):
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
-
+    print(bag)
     if item_id in list(bag.keys()):
         if quantity > 0:
             bag[item_id] = quantity
@@ -47,6 +47,7 @@ def adjust_bag(request, item_id):
             # messages.success(request, f'Removed {product.name} from your bag') remove message are not working with this active
 
         request.session['bag'] = bag
+        print(bag)
     return redirect(reverse('view_bag'))
 
 
