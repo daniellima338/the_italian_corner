@@ -18,13 +18,13 @@
             <div class="row h-100">
                 <div class="col-7 col-md-6 my-auto">
                     <h1 class="logo-font">
-                        Try a taste of Italy
+                        Try Our Monthly Wine Subscription
                     </h1>
                     {% if subscription.status == "active" %}
-                        <h4>Your subscription:</h4>
-                        <div class="card text-black">
+                        <h4 class="mt-5 font-weight-bold">Your subscription:</h4>
+                        <div class="text-white border">
                             <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
+                            <h5 class="card-title font-weight-bold">{{ product.name }}</h5>
                             <p class="card-text">
                                 {{ product.description }}
                             </p>

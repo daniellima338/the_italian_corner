@@ -38,7 +38,7 @@
                             </thead>
 
                             {% for item in bag_items %}
-                                <tr class="text-white">
+                                <tr class="text-white shopping-bag-font-size">
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                     </td>
@@ -78,8 +78,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="remove-item" id="remove_{{ item.item_id }}"><small>Remove</small></a>
-                                        <a class="update-link text-info float-right"><small>Update</small></a>
+                                        <a class="remove-item font-weight-bold text-decoration-none" id="remove_{{ item.item_id }}">Remove</a>
+                                        <a class="update-link text-info float-right font-weight-bold text-decoration-none">Update</a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>

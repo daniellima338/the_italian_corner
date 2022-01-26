@@ -14,7 +14,7 @@ body {
 
 /* font sizes */
 h1 {
-    font-size: 3.6rem;
+    font-size: 3.8rem;
     font-weight: bold;
 }
 
@@ -27,10 +27,17 @@ h4, li {
     font-size: 2rem;
 }
 
-.dropdown-item {
+h5, .dropdown-item {
     font-size: 1.5rem;
 }
 
+.shopping-bag-font-size {
+    font-size: 1.4rem;
+}
+
+#id_country {
+    padding: 0;
+}
 
 /* text colors */
 
@@ -43,6 +50,13 @@ hr {
     background: #fff;
 }
 
+#sort-selector {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
 
 /* background colors */
 .border-black {
@@ -202,6 +216,10 @@ input[name='q']::placeholder {
     height: 2px;
 }
 
+.toast {
+    font-size: 1.5rem;
+}
+
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
@@ -330,6 +348,10 @@ input[name='q']::placeholder {
   
       .header-container {
           padding-top: 164px;
+      }
+
+      .shopping-bag-font-size {
+          font-size: 2rem;
       }
   }
   

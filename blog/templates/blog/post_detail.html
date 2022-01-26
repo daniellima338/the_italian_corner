@@ -37,6 +37,7 @@
               </p>
               {{ comment.body | linebreaks }}
             </div>
+            <hr>
             {% endfor %}
           </div>
         </div>
@@ -51,7 +52,7 @@
               <form method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                <button type="submit" class="btn btn-success  btn-lg">Submit</button>
               </form>
             {% endif %}
           </div>
