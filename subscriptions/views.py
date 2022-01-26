@@ -9,12 +9,27 @@ import stripe
 
 from subscriptions.models import StripeCustomer
 
-
 @login_required
 def subscription_page(request):
     """ A view to return the index page"""
+    try:
+        # Retrieve the subscription & product
+        stripe_customer = StripeCustomer.objects.get(user=request.user)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        subscription = stripe.Subscription.retrieve(stripe_customer.stripeSubscriptionId)
+        product = stripe.Product.retrieve(subscription.plan.product)
 
-    return render(request, 'subscriptions/subscription_page.html')
+        # Feel free to fetch any additional data from 'subscription' or 'product'
+        # https://stripe.com/docs/api/subscriptions/object
+        # https://stripe.com/docs/api/products/object
+
+        return render(request, 'subscriptions/subscription_page.html', {
+            'subscription': subscription,
+            'product': product,
+        })
+
+    except StripeCustomer.DoesNotExist:
+        return render(request, 'subscriptions/subscription_page.html')
 
 
 @csrf_exempt

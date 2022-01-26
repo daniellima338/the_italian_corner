@@ -74,6 +74,17 @@
                 </div>
             </div>
         </div>
+        {% if subscription.status == "active" %}
+                        <h4>Your subscription:</h4>
+                        <div class="card text-black">
+                            <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">
+                                {{ product.description }}
+                            </p>
+                            </div>
+                        </div>
+                    {% endif %}
 {% endblock %}
 
 {% block postloadjs %}
