@@ -75,16 +75,26 @@
             </div>
         </div>
         {% if subscription.status == "active" %}
-                        <h4>Your subscription:</h4>
-                        <div class="card text-black">
-                            <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">
-                                {{ product.description }}
-                            </p>
-                            </div>
-                        </div>
-                    {% endif %}
+            <h4>Your subscription:</h4>
+            <div class="card text-black">
+                <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                    {{ product.description }}
+                </p>
+                </div>
+            </div>
+        {% else %}
+            <div class="my-5">
+                <h4>
+                    <a href="{% url 'subscription_page' %}" class="shop-now-button btn btn-lg rounded-pill text-uppercase py-3">
+                        <span>
+                            Take a look at the subscribtion
+                        </span>
+                    </a>
+                </h4>
+            </div>
+        {% endif %}
 {% endblock %}
 
 {% block postloadjs %}
