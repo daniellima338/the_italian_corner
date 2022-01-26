@@ -44,17 +44,17 @@
                     {% endif %}
 
                     {% if product.category == 'pasta' or 'coffee' or 'cheese' or 'sweets' %}
-                        <div class="col-12 text-left">
-                            <small>{{ product.size }} Gram</small> 
+                        <div class="col-12">
+                            <small><i class="fas fa-weight-hanging mr-1"></i>{{ product.size }} Gram</small> 
                         </div>
                         <!-- Not working, why?? -->
                     {% elif product.category == 'liquors' or 'wine' %} 
-                        <div class="col-12 text-left">
-                            <small>{{ product.size }} ML</small> 
+                        <div class="col-12">
+                            <small><i class="fas fa-weight-hanging mr-1"></i>{{ product.size }} ML</small> 
                         </div>
                     {% else %}
-                        <div class="col-12 text-left">
-                            <small>{{ product.size }}</small> 
+                        <div class="col-12">
+                            <small><i class="fas fa-weight-hanging mr-1"></i>{{ product.size }}</small> 
                         </div>
                     {% endif %}
 
