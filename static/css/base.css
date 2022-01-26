@@ -166,7 +166,7 @@ a {
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
-.btn-black:focus,
+.btn-black:focus
  {
     background: rgba(0, 140, 69, 0.8);
     color: white;
