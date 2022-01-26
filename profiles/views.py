@@ -1,14 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
-from .models import UserProfile
-from .forms import UserProfileForm
-from subscriptions.models import StripeCustomer
 from django.conf import settings
-from checkout.models import Order
 
 import stripe
+
+from subscriptions.models import StripeCustomer
+from checkout.models import Order
+from .models import UserProfile
+from .forms import UserProfileForm
 
 
 @login_required
@@ -16,22 +16,25 @@ def profile(request):
     """ Display the user's profile. """
     try:
 
-        profile = get_object_or_404(UserProfile, user=request.user)
+        profile_data = get_object_or_404(UserProfile, user=request.user)
         stripe_customer = StripeCustomer.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        subscription = stripe.Subscription.retrieve(stripe_customer.stripeSubscriptionId)
+        subscription = (stripe.Subscription.
+                        retrieve(stripe_customer.stripeSubscriptionId))
         product = stripe.Product.retrieve(subscription.plan.product)
 
         if request.method == 'POST':
-            form = UserProfileForm(request.POST, instance=profile)
+            form = UserProfileForm(request.POST, instance=profile_data)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Profile updated successfully')
             else:
-                messages.error(request, 'Update failed. Please ensure the form is valid.')
+                messages.error(request,
+                               'Update failed.'
+                               'Please ensure the form is valid.')
         else:
             form = UserProfileForm(instance=profile)
-        orders = profile.orders.all()
+        orders = profile_data.orders.all()
 
         template = 'profiles/profile.html'
         context = {
@@ -51,7 +54,9 @@ def profile(request):
                 form.save()
                 messages.success(request, 'Profile updated successfully')
             else:
-                messages.error(request, 'Update failed. Please ensure the form is valid.')
+                messages.error(request,
+                               'Update failed.'
+                               'Please ensure the form is valid.')
         else:
             form = UserProfileForm(instance=profile)
         orders = profile.orders.all()
@@ -65,7 +70,11 @@ def profile(request):
 
         return render(request, template, context)
 
+
 def order_history(request, order_number):
+    """
+    A view to display the order history
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -80,5 +89,3 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-
-

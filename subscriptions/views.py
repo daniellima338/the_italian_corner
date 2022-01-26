@@ -9,6 +9,7 @@ import stripe
 
 from subscriptions.models import StripeCustomer
 
+
 @login_required
 def subscription_page(request):
     """ A view to return the index page"""
@@ -16,12 +17,9 @@ def subscription_page(request):
         # Retrieve the subscription & product
         stripe_customer = StripeCustomer.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        subscription = stripe.Subscription.retrieve(stripe_customer.stripeSubscriptionId)
+        subscription = (stripe.Subscription.
+                        retrieve(stripe_customer.stripeSubscriptionId))
         product = stripe.Product.retrieve(subscription.plan.product)
-
-        # Feel free to fetch any additional data from 'subscription' or 'product'
-        # https://stripe.com/docs/api/subscriptions/object
-        # https://stripe.com/docs/api/products/object
 
         return render(request, 'subscriptions/subscription_page.html', {
             'subscription': subscription,
@@ -36,8 +34,8 @@ def subscription_page(request):
 def stripe_config(request):
     """ A function to get stripe key"""
     if request.method == 'GET':
-        stripe_config = {'publicKey': settings.STRIPE_PUBLIC_KEY}
-        return JsonResponse(stripe_config, safe=False)
+        stripe_configuration = {'publicKey': settings.STRIPE_PUBLIC_KEY}
+        return JsonResponse(stripe_configuration, safe=False)
 
 
 @csrf_exempt

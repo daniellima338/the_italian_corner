@@ -1,10 +1,11 @@
-from django.http import HttpResponse
-
-from .models import Order, OrderLineItem
-from products.models import Product
-
 import json
 import time
+
+from django.http import HttpResponse
+
+from products.models import Product
+from .models import Order, OrderLineItem
+
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -27,7 +28,6 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
-        save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -62,9 +62,10 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
-                status=200)
+            return (HttpResponse(
+                content=f'Webhook received: {event["type"]}'
+                        f'| SUCCESS: Verified order already in database',
+                status=200))
         else:
             order = None
             try:
@@ -96,9 +97,10 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
-            status=200)
+        return (HttpResponse(
+            content=f'Webhook received: {event["type"]}'
+                    f'| SUCCESS: Created order in webhook',
+            status=200))
 
     def handle_payment_intent_payment_failed(self, event):
         """

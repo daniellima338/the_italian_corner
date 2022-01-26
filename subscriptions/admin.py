@@ -3,4 +3,3 @@ from subscriptions.models import StripeCustomer
 
 
 admin.site.register(StripeCustomer)
-

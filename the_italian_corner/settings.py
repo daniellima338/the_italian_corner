@@ -142,16 +142,20 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.\
+                 auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.\
+                 auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.\
+                 auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.\
+                 auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -186,7 +190,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000'
     }
-    # Bucket Config 
+    # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'the-italian-corner'
     AWS_S3_REGION_NAME = 'us-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -213,7 +217,7 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY_THE_ITALIAN_CORNER', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY_THE_ITALIAN_CORNER', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET_THE_ITALIAN_CORNER', '')
 STRIPE_WH_SECRET_SUBSCRIPTION = os.getenv('STRIPE_WH_SECRET_SUBSCRIPTION')
-STRIPE_PRICE_ID = os.getenv('STRIPE_PRICE_ID_PREMIUM_PLAN','')
+STRIPE_PRICE_ID = os.getenv('STRIPE_PRICE_ID_PREMIUM_PLAN', '')
 
 
 if 'DEVELOPMENT' in os.environ:
