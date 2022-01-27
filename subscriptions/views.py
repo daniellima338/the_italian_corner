@@ -42,7 +42,7 @@ def stripe_config(request):
 def create_checkout_session(request):
     """ A function to create the checkout session for the subscription"""
     if request.method == 'GET':
-        domain_url = 'https://8000-white-dingo-4upknoey.ws-eu29.gitpod.io/subscriptions/'
+        domain_url = 'https://the-italian-corner.herokuapp.com/subscriptions/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             checkout_session = stripe.checkout.Session.create(

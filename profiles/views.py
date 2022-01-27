@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
@@ -33,7 +33,7 @@ def profile(request):
                                'Update failed.'
                                'Please ensure the form is valid.')
         else:
-            form = UserProfileForm(instance=profile)
+            form = UserProfileForm(instance=profile_data)
         orders = profile_data.orders.all()
 
         template = 'profiles/profile.html'
@@ -49,7 +49,7 @@ def profile(request):
 
     except StripeCustomer.DoesNotExist:
         if request.method == 'POST':
-            form = UserProfileForm(request.POST, instance=profile)
+            form = UserProfileForm(request.POST, instance=profile_data)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Profile updated successfully')
@@ -58,8 +58,8 @@ def profile(request):
                                'Update failed.'
                                'Please ensure the form is valid.')
         else:
-            form = UserProfileForm(instance=profile)
-        orders = profile.orders.all()
+            form = UserProfileForm(instance=profile_data)
+        orders = profile_data.orders.all()
 
         template = 'profiles/profile.html'
         context = {
@@ -89,3 +89,16 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+def unsubscripe(request):
+    stripe_customer = StripeCustomer.objects.get(user=request.user)
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+
+    stripe.Subscription.delete(
+    stripe_customer.stripeSubscriptionId,
+    )
+    stripe_customer.delete()
+    messages.success(request, 'You have succesfully unsubscriped!')
+
+    return redirect(reverse('subscription_page'))
+

@@ -7,7 +7,6 @@ fetch("/subscriptions/config/")
   // Initialize Stripe.js
   const stripe = Stripe(data.publicKey);
 
-  // new
   // Event handler
   let submitBtn = document.querySelector("#submitBtn");
   if (submitBtn !== null) {

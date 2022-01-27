@@ -232,22 +232,22 @@ Orders:
 
 ### Languages
 
-* [HTML](https://en.wikipedia.org/wiki/HTML)
-* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
-* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [HTML](https://en.wikipedia.org/wiki/HTML) - Used to create the main content for the website.
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)- Used to add style and colour to the content.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used to help make the site responsive to the user's input.
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - used the backend operations and get the data from the database
 
 ### Libraries & Frameworks
 
-- [Django](https://flask.palletsprojects.com/) - Python web framework, used for displaying data from backend databases to frontend presentation.
-- [dj-database-url](https://flask.palletsprojects.com/) -
-- [gunicorn](https://flask.palletsprojects.com/) -
-- [Pillow](https://flask.palletsprojects.com/) -
-- [Stripe](https://flask.palletsprojects.com/) -
-- [AWS](https://flask.palletsprojects.com/) -
+- [Django](https://flask.palletsprojects.com/) - Used to get the site authentication and authorisation functions up and running easily. The overall framework of the site.
+- [dj-database-url](https://pypi.org/project/dj-database-url/) - Used to parse my Postgress database
+- [gunicorn](https://gunicorn.org/) - Used to handle web requests
+- [Pillow](https://pillow.readthedocs.io/en/stable/) - Python pillow library for use to image class within it to show the image. 
+- [Stripe](https://stripe.com/en-dk) - used to facilitate the secure purchasing of products using a credit/debit card.
+- [AWS](https://flask.palletsprojects.com/) - used to store the static files on the live website (css and media files).
 - [Bootstrap](https://getbootstrap.com/) - CSS framework, mainly used for components.
 - [jQuery](https://jquery.com/) - JavaScript library, used for refactoring code.
-- [PostGress](https://www.mongodb.com/) - Cloud-based NoSQL database, used for housing data.
+- [PostGress](https://www.heroku.com/postgres) - Used to create, store and update the data used in this site.
 - [Google Fonts](https://fonts.google.com/) - Lobster font used in the design throughout.
 - [FontAwesome](https://fonts.google.com/icons) - Used in the design throughout.
 - [DNSPython](https://pypi.org/project/dnspython/) - DNS toolkit for Python.
@@ -262,19 +262,20 @@ Orders:
 --- 
 
 ## **Testing**
+I have had 3 people test the website's user stories and potential bugs
 
 #### User story: As a user I want to easily be able to view the total of my purchases at any time
 * **Plan**
 The user should easily recognize the total in the top corner in the shopping bag and see the total when navigating to the bag.
 
 * **Test**    
-
+Can you find out how to view the total of your purchase?
 
 * **Result**  
-
+All the users where able to see the total in the top corner and never had troubles finding the total amount.
 
 * **Verdict**  
-
+The test has passed all the criteria and works like planned.
 
 
 #### User story: As a user I want to quickly be able to find out what features the site has
@@ -282,24 +283,23 @@ The user should easily recognize the total in the top corner in the shopping bag
 The user should navigate down the main page to read about all the features of the page or use the navigation menu to get around the different areas of the page.
 
 * **Test** 
-
+How would you go about understanding what you can do on the website?
 
 * **Result** 
-
+Most users start out by clicking on the "see our products tab" on the home page. After that they start exploring the site and have no issues finding out how to subscribe, buy items or view the blogs.
 
 * **Verdict** 
-The test has passed all the criteria and works like planned.
+The test has passed all the criteria and works like planned. I would have liked the users to take a look down the front page before they go to products, but it is essentially not wrong what they are doing. 
 
 #### User story: As a user I want to be able to register for an account
 * **Plan** 
-The user should reqognize the my account logo on top and understand that is where they sign up for a profile. Alternatively the user signs up through navigating to the subscription page.
-
+The user should reqognize the account icon on top and understand that is where they sign up for a profile. Alternatively the user signs up through navigating to the subscription page.
 
 * **Test**  
-
+How would you sign up for an account?
 
 * **Result** 
-
+The users quickly understood where they could sign up for a user account, as they were used to the account icon from other websites. They found the registration process easy. 
 
 * **Verdict**  
 The test has passed all the criteria and works like planned.
@@ -310,8 +310,10 @@ The test has passed all the criteria and works like planned.
 The user should recognize that he/she can log out and in through the my account menu in the main nav bar. 
 
 * **Test** 
+How would you log in and out?
 
 * **Result** 
+The users quickly understood where they could log in and out of their user account, as they were used to the account icon from other websites. They found the login/log out process easy.
 
 * **Verdict**     
 The test has passed all the criteria and works like planned.
@@ -321,19 +323,23 @@ The test has passed all the criteria and works like planned.
 The user can get a new password on the login page, if they do not remember their current one. This should be intuitive to find.
 
 * **Test** 
+Can you recover your password?
 
 * **Result** 
+2 of the users very intuitively moved to the login page and found the recover password link in first try. The third user moved through the front page to the bottom of the page as first. After that he went to the account icon and found the page. 
 
 * **Verdict**     
-The test has passed all the criteria and works like planned.
+The test has passed all the criteria and works like planned. It is recognized that one user intuitively thinks it should be at the bottom of the page, as some websites do that. But after considering, it is enough with the link on the login page. 
 
 #### User story: As a user I want to be able to get inspiration to how i can use the products
 * **Plan** 
 The user should navigate to the blog page, where they can find inspiration on how to use the different Italian products. 
 
 * **Test** 
+Navigate to the blog page
 
 * **Result** 
+All of the users found the blog page at the top of the menu in a matter of seconds. They found it very easy to navigate through.
 
 * **Verdict**     
 The test has passed all the criteria and works like planned.
@@ -343,39 +349,45 @@ The test has passed all the criteria and works like planned.
 The user can either use the categories in the main nav bar to sort the kind of products they like or use the filter functionality to find products according to different criteria.
 
 * **Test** 
+Find the cheapest product on the product page
 
 * **Result** 
+One user looked over the different products to find the cheapest price, by going through all of them. The two others found the filter function very quickly and filtered from cheapest to most expensive. In the end the last customer also found the filter, but it took some time for him. 
 
 * **Verdict**     
-The test has passed all the criteria and works like planned.
+The test was a partial pass. The one user that didn't find it quickly believes it was his own mistake. 
 
 #### User story: As a user I want to easily be able to purchase and go to checkout in a short time
 * **Plan** 
 The user should be able to add products to their bag and navigate to checkout within a short time period.
 
 * **Test** 
+Buy a product from the page
 
 * **Result** 
+the users all went for many products and added them to their bags. They also tried to adjust the bag and delete products. They found the checkout process fairly quickly. As they were Danish they were a little bit confused as to what they had to write in the state field.
 
 * **Verdict**     
-The test has passed all the criteria and works like planned.
+The test has passed all the criteria and works like planned. 
 
 #### User story: As a user I want to be able to understand what I am purchasing before checkout
 * **Plan** 
 The user can see their purchases in a small window at the top of the screen, as well as in the bag before purchase. They should be able to tell easily what products they are buying. 
 
 * **Test** 
+How would you view what you have bought? 
 
 * **Result** 
-
+Two of the users notice the small bag window in the corner very quickly and find it very nice, so they are able to view their purchases throughout their time on the site. The last one does not really notice it is a quick view of the bag and goes straight to the shopping bag view. After putting a few more products in the bag he figures it out. 
 * **Verdict**     
-The test has passed all the criteria and works like planned.
+The test partially passed. But after talking with the users they all agree it is easy to find. 
 
 
 ### **Bugs**
 
 #### 1. The Subscription button would not take me to the payment page.
 * **Solution** 
+I added a new seperate stripe payment flow to the page for the subscriptions. They now go through a stripe generated payment site.
 
 
 #### 2. I had troubles migrating my database to Postgress after putting entries into sqlite
@@ -384,11 +396,20 @@ The test has passed all the criteria and works like planned.
 
 Had to put files into a json file and then upload them to the postgres database.
 
-#### 3 
+#### 3 Adjusting the bag in the shopping bag was not working
 
 * **Solution**
+It was an empty href that destroyed the functionality, as it reloaded the page instead of using the 'adjust_bag' view. 
 
+#### 4 Cancel Subscription button was not working
 
+* **Solution**
+I had to get help from the Stripe documentation, as they have a guide to how to set up the cancel button. 
+
+#### 5 Was not able to re-subscripe after unsubscriping
+
+* **Solution**
+The issue was that i had deleted the customer from the stripe database, but i had forgotten to delete it from my own database. The issue is fixed. 
 --- 
 
 ## **Deployment**
