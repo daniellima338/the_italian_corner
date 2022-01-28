@@ -220,6 +220,10 @@ input[name='q']::placeholder {
     font-size: 1.5rem;
 }
 
+.invalid-feedback {
+    color: wheat;
+}
+
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {

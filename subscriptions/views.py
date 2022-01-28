@@ -37,7 +37,7 @@ def stripe_config(request):
         stripe_configuration = {'publicKey': settings.STRIPE_PUBLIC_KEY}
         return JsonResponse(stripe_configuration, safe=False)
 
-
+# taken from https://testdriven.io/blog/django-stripe-subscriptions/
 @csrf_exempt
 def create_checkout_session(request):
     """ A function to create the checkout session for the subscription"""
@@ -50,7 +50,6 @@ def create_checkout_session(request):
                                      request.user.is_authenticated else None),
                 success_url=domain_url +
                 'success?session_id={CHECKOUT_SESSION_ID}',
-                cancel_url=domain_url + 'cancel/',
                 payment_method_types=['card'],
                 mode='subscription',
                 line_items=[
@@ -70,13 +69,6 @@ def success(request):
     """ A view to return the success page"""
 
     return render(request, 'subscriptions/success.html')
-
-
-@login_required
-def cancel(request):
-    """ A view to return the cancel page"""
-
-    return render(request, 'subscriptions/cancel.html')
 
 
 @csrf_exempt
@@ -115,6 +107,7 @@ def stripe_webhook(request):
             stripeCustomerId=stripe_customer_id,
             stripeSubscriptionId=stripe_subscription_id,
         )
+        user = client_reference_id.save()
         print(user.username + ' just subscribed.')
 
     return HttpResponse(status=200)
