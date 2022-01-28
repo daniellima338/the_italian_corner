@@ -1,6 +1,6 @@
 # **The Italian Corner**
 
-![Mokeup Image](static/Images/mock_up.png)
+![Mokeup Image](media/mock_up.png)
 
 ## **Goal for this project** 
 The italian corner is an E-commerce store, where it is possible to purchase different Italian products imported directly from Italy. Furthermore you can dive into the blog to get inspiration on what to do with the different Italian products and tools.
@@ -14,7 +14,52 @@ If you have any feedback or questions, head over to my GitHub contact details an
 ---
 
 ## Table of contents 
+- [**The Italian Corner**](#--the-italian-corner--)
+  * [**Goal for this project**](#--goal-for-this-project--)
+  * [**UX**](#--ux--)
+    + [**User Stories**](#--user-stories--)
+      - [User](#user)
+      - [Owner](#owner)
+      - [User Expectations](#user-expectations)
+  * [**Design Choices**](#--design-choices--)
+    + [Fonts](#fonts)
+    + [Icons](#icons)
+    + [Colors](#colors)
+    + [Changes made to color scheme](#changes-made-to-color-scheme)
+  * [**Structure**](#--structure--)
+    + [Home Page](#home-page)
+    + [Products Page](#products-page)
+    + [Product Detail page](#product-detail-page)
+    + [Profile Page](#profile-page)
+    + [blog page](#blog-page)
+    + [blog post page](#blog-post-page)
+    + [shopping bag/checkout](#shopping-bag-checkout)
+    + [**Wireframes**](#--wireframes--)
+      - [Desktop Wireframes](#desktop-wireframes)
+      - [Tablet Wireframes](#tablet-wireframes)
+      - [Mobile Wireframes](#mobile-wireframes)
+    + [Database planning](#database-planning)
+      - [blog collection](#blog-collection)
+      - [products collection](#products-collection)
+      - [checkout collection](#checkout-collection)
+      - [Subscription collection](#subscription-collection)
+    + [Features to be implemented](#features-to-be-implemented)
+  * [**Technologies used**](#--technologies-used--)
+    + [Languages](#languages)
+    + [Libraries & Frameworks](#libraries---frameworks)
+    + [Tools](#tools)
+  * [**Testing**](#--testing--)
+    + [**Bugs**](#--bugs--)
+  * [**Deployment**](#--deployment--)
+    + [Local deployment](#local-deployment)
+    + [Deployment to Heroku](#deployment-to-heroku)
+    + [Prerequisite](#prerequisite)
+    + [Setting Up](#setting-up)
+    + [Using Postgress](#using-postgress)
+    + [** Credit **](#---credit---)
+    + [**Acknowledgements**](#--acknowledgements--)
 
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## **UX**
 
@@ -113,6 +158,9 @@ The blog post page holds the blog in its full size, as well as who created it.
 
 ### shopping bag/checkout
 The shopping bag and checkout page holds the users products as they shop around. The checkout page is also where the user puts in their details. 
+
+### Subscription page
+The subscription page is there for users to subscripe to the monthly wine service. It is still under development, so description of the monthly wine is missing. But the functionality is working. 
 
 
 ### **Wireframes**
@@ -240,10 +288,11 @@ name = models.CharField()
 ```
 ### Features to be implemented
 
-* Ability to log in with Facebook or Google
-* Recipies added to the blog page
+* Ability to log in with Facebook or Google.
+* Recipies added to the blog page.
 * Community forum, where users can discuss various subjects.
-* Another Subscription product
+* Another Subscription product.
+* Details on what you get out of the subscription.
 
 --- 
 
