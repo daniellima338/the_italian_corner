@@ -90,15 +90,18 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
 def unsubscripe(request):
+    """
+    A view to unsubscripe customers
+    """
     stripe_customer = StripeCustomer.objects.get(user=request.user)
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     stripe.Subscription.delete(
-    stripe_customer.stripeSubscriptionId,
+        stripe_customer.stripeSubscriptionId,
     )
     stripe_customer.delete()
     messages.success(request, 'You have succesfully unsubscriped!')
 
     return redirect(reverse('subscription_page'))
-

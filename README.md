@@ -116,7 +116,7 @@ The shopping bag and checkout page holds the users products as they shop around.
 
 
 ### **Wireframes**
-I have decided to use [Balsamic](https://balsamiq.com/wireframes/) to create wireframes for my website. 
+I have decided to use [Balsamic](https://balsamiq.com/wireframes/) to create wireframes for my website.
 First I created a wireframe for mobile, as the approach is mobile first. Thereafter wireframes for desktop and tablets. 
 
 You can find my wireframes below:
@@ -219,12 +219,31 @@ Orders:
     original_bag = models.TextField()
     stripe_pid = models.CharField()
 ```
+
+#### Subscription collection
+The Subscription collection hold the wine subscriptions that the customers have. Furthermore it holds information about the monthly wine.
+```yaml
+Stripe Customers:
+class StripeCustomer(models.Model):
+    user = models.OneToOneField()
+    stripeCustomerId = models.CharField()
+    stripeSubscriptionId = models.CharField()
+```
+```yaml
+Monthly:
+class MonthlyWine(models.Model):
+name = models.CharField()
+    description = models.TextField()
+    region = models.CharField()
+    image_url = models.URLField()
+    image = models.ImageField()
+```
 ### Features to be implemented
 
-* A heatmap over where diving is good during different seasons.
-* Access to store with diving gear.
-* community forum, where users can discuss various subjects.
-* Google map functionality, where dives of users get shown on map upon dive entry. 
+* Ability to log in with Facebook or Google
+* Recipies added to the blog page
+* Community forum, where users can discuss various subjects.
+* Another Subscription product
 
 --- 
 
@@ -251,6 +270,7 @@ Orders:
 - [Google Fonts](https://fonts.google.com/) - Lobster font used in the design throughout.
 - [FontAwesome](https://fonts.google.com/icons) - Used in the design throughout.
 - [DNSPython](https://pypi.org/project/dnspython/) - DNS toolkit for Python.
+- [SQLite3](https://www.heroku.com/) Django's default database.
 
 ### Tools
 * [Git](https://git-scm.com/)
@@ -258,6 +278,9 @@ Orders:
 * [Balsamic](https://balsamiq.com/wireframes/)
 * [W3C HTML Validation Service](https://validator.w3.org/)
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+* [**W3School**](https://www.w3schools.com/) used as a general source of information.
+* [**PEP8 online**](http://pep8online.com/) used during the post deployment testing stage to ensure PEP8 requirement.
+* [**Stackoverflow**](https://stackoverflow.com/) used as a general source of information.
 
 --- 
 
@@ -430,7 +453,15 @@ The issue was that i had deleted the customer from the stripe database, but i ha
 8. Your local clone will now be made.
 
 ### Deployment to Heroku
+* The website is deployed to [Heroku](https://www.heroku.com/) due to GitHub's ability to only host static pages. To successfully  deploy the website to Heroku please follow these steps.
 
+### Prerequisite
+In order to successfully  run the app on Heroku,there are a few applications and dependencies required.
+1. In the IDE terminal enter command `pip3 freeze--local > requirements.txt`.
+2. Create Procfile using CLI command `echo web: python app.py > Procfile`. Delete a blank line to avoid any possible issues with the app.
+- Heroku Deployment
+
+### Setting Up
 1. Log in to [Heroku](https://www.heroku.com/).
 2. Click 'New' on the Dashboard and select 'Create new app'.
 3. Select your region and create an app name. ideally call the app the same as your project.
@@ -451,6 +482,9 @@ The issue was that i had deleted the customer from the stripe database, but i ha
 --- 
 
 ### ** Credit **
+For the purpose of this project I referred to and used authentication from the Code Institute Chris's [Boutique ADO](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+For the subscription app inspiration has been taken from [TestDriven](https://testdriven.io/blog/django-stripe-subscriptions/). 
+
 I have drawn much inspiration from different posts on Stackoverflow. Furthermore much inspiration is taken from the trial project Boutique Ado in the Code Institute course, as the functionality there is perfect for an E-commerce store. 
 Credit is also given to my mentor [Spence_mentor], whom have helped me during the project period. 
 

@@ -37,6 +37,7 @@ def stripe_config(request):
         stripe_configuration = {'publicKey': settings.STRIPE_PUBLIC_KEY}
         return JsonResponse(stripe_configuration, safe=False)
 
+
 # taken from https://testdriven.io/blog/django-stripe-subscriptions/
 @csrf_exempt
 def create_checkout_session(request):
@@ -103,11 +104,10 @@ def stripe_webhook(request):
 
         # Get the user and create a new StripeCustomer
         user = User.objects.get(id=client_reference_id)
-        customer = StripeCustomer.objects.create(
+        StripeCustomer.objects.create(
             user=user,
             stripeCustomerId=stripe_customer_id,
             stripeSubscriptionId=stripe_subscription_id,
         )
         print(user.username + ' just subscribed.')
-        customer.save()
     return HttpResponse(status=200)

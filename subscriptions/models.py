@@ -9,3 +9,11 @@ class StripeCustomer(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class MonthlyWine(models.Model):
+    name = models.CharField(max_length=254)
+    description = models.TextField()
+    region = models.CharField(max_length=254)
+    image_url = models.URLField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
