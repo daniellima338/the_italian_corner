@@ -101,6 +101,7 @@ def stripe_webhook(request):
         client_reference_id = session.get('client_reference_id')
         stripe_customer_id = session.get('customer')
         stripe_subscription_id = session.get('subscription')
+        stripe_customer = StripeCustomer.objects.get(user=request.user)
 
         # Get the user and create a new StripeCustomer
         user = User.objects.get(id=client_reference_id)
@@ -109,5 +110,6 @@ def stripe_webhook(request):
             stripeCustomerId=stripe_customer_id,
             stripeSubscriptionId=stripe_subscription_id,
         )
+        stripe_customer.create()
         print(user.username + ' just subscribed.')
     return HttpResponse(status=200)
