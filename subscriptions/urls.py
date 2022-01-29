@@ -10,3 +10,4 @@ urlpatterns = [
     path('cancel/', views.cancel, name='cancel'),
     path('webhook/', stripe_webhook, name='stripe_webhook'),
 ]
+
