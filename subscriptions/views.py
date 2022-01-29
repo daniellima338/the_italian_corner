@@ -1,3 +1,5 @@
+import os
+
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -5,7 +7,6 @@ from django.http.response import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
-import logging
 import stripe
 
 from subscriptions.models import StripeCustomer
@@ -44,7 +45,11 @@ def stripe_config(request):
 def create_checkout_session(request):
     """ A function to create the checkout session for the subscription"""
     if request.method == 'GET':
-        domain_url = 'https://the-italian-corner.herokuapp.com/subscriptions/'
+        if 'DEVELOPMENT' in os.environ:
+            domain_url = 'https://8000-white-dingo-4upknoey.ws-eu29.gitpod.io/subscriptions/'
+        else:
+            domain_url = 'https://the-italian-corner.herokuapp.com/subscriptions/'
+
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             checkout_session = stripe.checkout.Session.create(
@@ -110,8 +115,6 @@ def stripe_webhook(request):
             stripeCustomerId=stripe_customer_id,
             stripeSubscriptionId=stripe_subscription_id,
         )
-        logger = logging.getLogger('testlogger')
-        logger.info(stripe_customer)
-        logger.info(user.username + ' just subscribed.')
+        print(stripe_customer)
+        print(user.username + ' just subscribed.')
     return HttpResponse(status=200)
-
