@@ -8,7 +8,7 @@ class StripeCustomer(models.Model):
     stripeSubscriptionId = models.CharField(max_length=255)
 
     def __str__(self):
-        return "user=" + self.user.username + " stripeCustomerId=" + self.stripeCustomerId + " stripeSubscriptionId=" + self.stripeSubscriptionId 
+        return self.user.username
 
 
 class MonthlyWine(models.Model):

@@ -1,5 +1,4 @@
 import os
-
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -77,6 +76,12 @@ def success(request):
     """ A view to return the success page"""
 
     return render(request, 'subscriptions/success.html')
+
+@login_required
+def cancel(request):
+    """ A view to return the cancel page"""
+
+    return render(request, 'subscriptions/cancel.html')
 
 
 @csrf_exempt
