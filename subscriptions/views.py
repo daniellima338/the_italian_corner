@@ -114,3 +114,4 @@ def stripe_webhook(request):
         logger.info(stripe_customer)
         logger.info(user.username + ' just subscribed.')
     return HttpResponse(status=200)
+
