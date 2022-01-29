@@ -5,6 +5,7 @@ from django.http.response import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
+import logging
 import stripe
 
 from subscriptions.models import StripeCustomer
@@ -109,6 +110,7 @@ def stripe_webhook(request):
             stripeCustomerId=stripe_customer_id,
             stripeSubscriptionId=stripe_subscription_id,
         )
-        print(stripe_customer)
-        print(user.username + ' just subscribed.')
+        logger = logging.getLogger('testlogger')
+        logger.info(stripe_customer)
+        logger.info(user.username + ' just subscribed.')
     return HttpResponse(status=200)
