@@ -77,6 +77,7 @@ def success(request):
 
     return render(request, 'subscriptions/success.html')
 
+
 @login_required
 def cancel(request):
     """ A view to return the cancel page"""
