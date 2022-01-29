@@ -482,6 +482,11 @@ I had to get help from the Stripe documentation, as they have a guide to how to 
 
 * **Solution**
 The issue was that i had deleted the customer from the stripe database, but i had forgotten to delete it from my own database. The issue is fixed. 
+
+#### 5 Customer was created in Stripe database but not in local database on Heroku.
+
+* **Solution**
+The issue was that the webhook endpoint i had set was still for my local enviroment. I made a new endpoint for the Heroku app, and then the webhooks were working.
 --- 
 
 ## **Deployment**
